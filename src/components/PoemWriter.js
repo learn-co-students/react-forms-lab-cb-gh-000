@@ -8,6 +8,7 @@ class PoemWriter extends React.Component {
       poem: '',
       hidden: false
     };
+    this.handleChange = this.handleChange.bind(this);
   }
   handleChange(event){
     const poem = event.target.value;
@@ -35,7 +36,7 @@ class PoemWriter extends React.Component {
           cols="60"
           name="poem"
           value={this.state.poem}
-          onChange={this.handleChange.bind(this)}
+          onChange={this.handleChange}
         />
       {!this.state.hidden &&
         <div

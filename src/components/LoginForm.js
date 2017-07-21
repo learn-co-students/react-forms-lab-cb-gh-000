@@ -8,6 +8,8 @@ class LoginForm extends React.Component {
       username: '',
       password: '',
     };
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 /* this.props.onSubmit
 function login({ username, password }) {
@@ -28,7 +30,7 @@ function login({ username, password }) {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit.bind(this)}>
+      <form onSubmit={this.handleSubmit}>
         <div>
           <label>
             Username
@@ -37,7 +39,7 @@ function login({ username, password }) {
               type="text"
               name="username"
               value={this.state.username}
-              onChange={this.handleLogin.bind(this)}
+              onChange={this.handleLogin}
               />
           </label>
         </div>
