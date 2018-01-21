@@ -2,10 +2,11 @@ import React from "react";
 import { expect } from "chai";
 import sinon from "sinon";
 import { shallow } from "enzyme";
-
+import Enzyme from "enzyme";
+import Adapter from 'enzyme-adapter-react-16';
 import LoginForm from "../src/components/LoginForm";
 import { isValueInState, noop } from "./util";
-
+Enzyme.configure({ adapter: new Adapter() });
 describe("<LoginForm />", () => {
   const spy = sinon.spy();
 
