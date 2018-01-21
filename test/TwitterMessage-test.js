@@ -1,9 +1,9 @@
 import React from "react";
 import { expect } from "chai";
-import { shallow } from "enzyme";
-
+import { shallow } from "enzyme";import Enzyme from "enzyme";
+import Adapter from 'enzyme-adapter-react-16';
 import TwitterMessage from "../src/components/TwitterMessage";
-
+Enzyme.configure({ adapter: new Adapter() });
 describe("<TwitterMessage />", () => {
   describe("Saving input value in state", () => {
     it("should update the state when typing", () => {
