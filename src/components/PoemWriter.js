@@ -1,5 +1,9 @@
 import React from "react";
 
+function countWords(line) {
+  return line.split(' ').filter(l => l).length;
+}
+
 class PoemWriter extends React.Component {
   constructor() {
     super();
@@ -14,9 +18,9 @@ class PoemWriter extends React.Component {
     const lines = text.split('\n');
     const numLines = lines.length;
     const hasThreeLines = numLines === 3;
-    const isFirstLine = lines[0].split(' ').length === 5;
-    const isSecondLine = numLines > 1 ? lines[1].split(' ').length === 3 : null;
-    const isThirdLine = numLines > 2 ? lines[2].split(' ').length === 5 : null;
+    const isFirstLine = countWords(lines[0]) === 5;
+    const isSecondLine = numLines > 1 ? countWords(lines[1]) === 3 : null;
+    const isThirdLine = numLines > 2 ? countWords(lines[2]) === 5 : null;
 
     const isValid = hasThreeLines && isFirstLine && isSecondLine && isThirdLine
     this.setState({
