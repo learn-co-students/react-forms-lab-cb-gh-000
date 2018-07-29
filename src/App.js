@@ -22,6 +22,9 @@ class App extends Component {
         </h1>
         <TwitterMessage maxChars={140} />
 
+        <h1><pre>PoemWriter</pre></h1>
+        <PoemWriter />
+
 
 
       </div>
